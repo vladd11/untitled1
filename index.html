@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css"/>
+    <title>Хочешь секса со мной</title>
+</head>
+<body>
+<script>
+    function rnd() {
+        if(Math.random() > 0.5) {
+            return 1;
+        }
+        return -1;
+    }
+    function yes() {
+        var span = document.getElementById("yes")
+
+        var leftPos = Math.max(100, (Math.random() * 300)) * rnd()
+        var topPos = Math.max(100, (Math.random() * 300)) * rnd();
+
+        span.style.transform = `translate(${leftPos}px, ${topPos}px)`;
+    }
+    
+    function no() {
+        document.getElementById("t").outerText="Ураа, спасибо!";
+
+        document.getElementById("yes").hidden= true;
+        document.getElementById("no").hidden= true;
+    }
+</script>
+<div class="center">
+    <div id="title">
+        <div id="t">
+            Хочешь секса со мной?
+        </div>
+    </div>
+    <img src="fun.gif" />
+    <div class="col">
+        <div id="yes" onclick="yes()">Да</div>
+        <div id="no" onclick="no()">Нет</div>
+    </div>
+</div>
+</body>
+</html>
